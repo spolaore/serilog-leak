@@ -22,7 +22,7 @@ namespace leaking_app
                 .UseSerilog((context, services, configuration) => configuration
                     .ReadFrom.Configuration(context.Configuration)
                     .ReadFrom.Services(services)
-                    .Enrich.FromLogContext(), writeToProviders: false)
+                    .Enrich.FromLogContext(), writeToProviders: true)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
